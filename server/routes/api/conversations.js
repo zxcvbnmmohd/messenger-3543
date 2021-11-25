@@ -19,9 +19,9 @@ router.get("/", async (req, res, next) => {
         },
       },
       attributes: ["id"],
-      order: [[Message, "createdAt", "DESC"]],
+      order: [[Message, "createdAt", "ASC"]], // Orderings messages properly
       include: [
-        { model: Message, order: ["createdAt", "DESC"] },
+        { model: Message, order: ["createdAt", "ASC"] }, // here too...
         {
           model: User,
           as: "user1",

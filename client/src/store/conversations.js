@@ -18,7 +18,8 @@ const ADD_CONVERSATION = "ADD_CONVERSATION";
 
 // ACTION CREATORS
 
-export const gotConversations = (conversations) => {
+// Found a typo, just to match the style
+export const getConversations = (conversations) => {
   return {
     type: GET_CONVERSATIONS,
     conversations,
