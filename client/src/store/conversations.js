@@ -18,7 +18,6 @@ const ADD_CONVERSATION = "ADD_CONVERSATION";
 
 // ACTION CREATORS
 
-// Found a typo, just to match the style
 export const getConversations = (conversations) => {
   return {
     type: GET_CONVERSATIONS,

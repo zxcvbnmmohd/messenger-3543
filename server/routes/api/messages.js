@@ -13,13 +13,6 @@ router.post("/", async (req, res, next) => {
 
     // if we already know conversation id, we can save time and just add it to message and return
     if (conversationId) {
-      // Making sure message being sent is one of the two in the convo
-      const conversation = await Conversation.findOne({ where: { id: conversationId } });
-
-      if (senderId !== (conversation.dataValues.user1Id || conversation.dataValues.user2Id)) {
-        return res.sendStatus(401);
-      }
-      
       const message = await Message.create({ senderId, text, conversationId });
       return res.json({ message, sender });
     }

@@ -1,7 +1,7 @@
 import axios from "axios";
 import socket from "../../socket";
 import {
-  getConversations, // Fixing typo
+  getConversations,
   addConversation,
   setNewMessage,
   setSearchedUsers,
@@ -72,7 +72,7 @@ export const logout = (id) => async (dispatch) => {
 export const fetchConversations = () => async (dispatch) => {
   try {
     const { data } = await axios.get("/api/conversations");
-    dispatch(getConversations(data)); // Fixing Typo
+    dispatch(getConversations(data));
   } catch (error) {
     console.error(error);
   }
@@ -95,7 +95,7 @@ const sendMessage = (data, body) => {
 // conversationId will be set to null if its a brand new conversation
 export const postMessage = (body) => async (dispatch) => {
   try {
-    const data = await saveMessage(body); // Needed to by Async/Await 
+    const data = await saveMessage(body);
 
     if (!body.conversationId) {
       dispatch(addConversation(body.recipientId, data.message));
