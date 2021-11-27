@@ -80,3 +80,13 @@ export const addNewConvoToStore = (state, recipientId, message) => {
     }
   });
 };
+
+export const updateConvoInStore = (state, newConvo) => {
+  return state.map((convo) => {
+    if (convo.id === newConvo.id) {
+      return newConvo;
+    } else {
+      return convo;
+    }
+  });
+};

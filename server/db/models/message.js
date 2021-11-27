@@ -10,6 +10,25 @@ const Message = db.define("message", {
     type: Sequelize.INTEGER,
     allowNull: false,
   },
+  didRead: {
+    type: Sequelize.BOOLEAN,
+    allowNull: true,
+  },
 });
+
+Message.markMessagesAsRead = async (convoId, senderId) => {
+  return await Message.update(
+    { 
+      didRead: true, 
+    },
+    {
+      where: {
+        conversationId: convoId,
+        senderId: senderId,
+        didRead: false,
+      },
+    },
+  );
+};
 
 module.exports = Message;
