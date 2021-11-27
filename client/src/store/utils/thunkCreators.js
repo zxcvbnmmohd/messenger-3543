@@ -123,7 +123,6 @@ export const searchUsers = (searchTerm) => async (dispatch) => {
 export const setChatAsRead = (body) => async (dispatch) => {
   try {
     const { data } = await axios.put("/api/conversations/read", body);
-    console.log("ASDASDASDAsdasdasdasdasdaS");
     dispatch(updateConversation(data.conversation));
   } catch (error) {
     console.error(error);

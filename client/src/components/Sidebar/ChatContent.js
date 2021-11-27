@@ -46,9 +46,6 @@ const ChatContent = (props) => {
             {latestMessageText}
           </Typography>
         )}
-        {/* <Typography className={`${classes.previewText} ${unreadCount > 0 ?? classes.unreadText}`}>
-          {latestMessageText}
-        </Typography> */}
       </Box>
     </Box>
   );
