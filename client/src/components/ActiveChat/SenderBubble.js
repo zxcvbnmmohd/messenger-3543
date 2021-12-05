@@ -36,8 +36,6 @@ const SenderBubble = (props) => {
   const classes = useStyles();
   const { time, text, showAvatar, otherUser } = props;
 
-  console.log(showAvatar);
-
   return (
     <Box className={classes.root}>
       <Typography className={classes.date}>{time}</Typography>

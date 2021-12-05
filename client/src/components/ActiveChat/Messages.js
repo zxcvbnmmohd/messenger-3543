@@ -9,9 +9,10 @@ const Messages = (props) => {
     show: false,
     messageId: null,
   });
-
+  
   const checkLastMessageRead = (message) => {
     const { show } = showReadAvatar;
+    console.log("hihihihihihihihihihihihihihihihihihihi")
     if (!show && message.didRead && message.senderId === userId) {
       setShowReadAvatar({ show: true, messageId: message.id });
     }

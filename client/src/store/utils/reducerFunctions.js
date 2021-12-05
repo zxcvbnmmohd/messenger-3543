@@ -90,3 +90,20 @@ export const updateConvoInStore = (state, newConvo) => {
     }
   });
 };
+
+export const markMessageAsReadInStore = (state, convoId, messageIds) => {
+  return state.map((convo) => {
+    if (convo.id !== convoId) {
+      return convo
+    }
+    
+    const convoCopy = { ...convo };
+    convoCopy.messages = convo.messages.map((message) => {
+      if (messageIds.indexOf(message.id) >= 0) {
+        message.didRead = true;
+      }
+      return message
+    })
+    return convoCopy
+  })
+}
